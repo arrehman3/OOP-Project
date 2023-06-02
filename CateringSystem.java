@@ -25,7 +25,7 @@ public class CateringSystem implements Serializable{
         return pricesPerSeat;
     }
     
-    public void addFoodItem(String itemName, double pricePerSeat) {
+    public void addFoodItem(String[] itemName, double[] pricePerSeat) {
         foodItems.add(itemName);
         double[] newPricesPerSeat = new double[pricesPerSeat.length + 1];
         System.arraycopy(pricesPerSeat, 0, newPricesPerSeat, 0, pricesPerSeat.length);

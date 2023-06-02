@@ -38,7 +38,7 @@ public class customerframe extends JFrame   {
         t3.setBounds(250,300,140,40);
         b1 = new JButton("Enter");
         b1.setBounds(150,400,140,40);
-        b2 = new JButton("Clear");
+        b2 = new JButton("Clear");s
         b2.setBounds(300,400,140,40);
         add(L0);
         // add(l0);

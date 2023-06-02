@@ -62,20 +62,27 @@ public class maingui extends JFrame  {
     {
         public void actionPerformed(ActionEvent ae)
         {
+
+            validations v = new validations();
+
             if(ae.getActionCommand().equals("Enter"))
             {
-                if(t1.getText().equals("")|| t2.getText().equals(""))
+                if(t1.getText().equals("")|| t2.getText().equals("")||t3.getText().equals(""))
                 {
-                    JOptionPane.showMessageDialog(frame,"Fill both Boxes");
+                    JOptionPane.showMessageDialog(frame,"Fill all Boxes");
                 }
 
-                else{
+                else if (v.checkString(t1.getText()) && v.checkNumber(t2.getText()) && v.checkNumber(t3.getText())){
                     String name = t1.getText() ;
                     int id = Integer.parseInt(t2.getText());
                     String num = t3.getText();
                     Manager M1 = new Manager(id, name, num);
+                    dispose();
                     customerframe cf = new customerframe();
                     
+                }
+                else{
+                    JOptionPane.showMessageDialog(frame,"Inputs are incorrect");
                 }
             }
             else{

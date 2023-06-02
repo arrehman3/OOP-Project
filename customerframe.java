@@ -1,4 +1,6 @@
 import javax.swing.*;
+import javax.swing.tree.VariableHeightLayoutCache;
+
 import java.awt.*;
 import java.awt.event.*;
 import java.awt.event.ActionEvent;
@@ -26,11 +28,11 @@ public class customerframe extends JFrame   {
         l1.setBounds(100,100,130,40);
         t1 = new JTextField();
         t1.setBounds(250,100,140,40);
-        l2 = new JLabel("Enter Manager Id:");
+        l2 = new JLabel("Enter Customer Id:");
         l2.setBounds(100,200,120,40);
         t2 = new JTextField();
         t2.setBounds(250,200,140,40);
-        l3 = new JLabel("Manager's Contact No:");
+        l3 = new JLabel("Customer's Contact No:");
         l3.setBounds(100,300,140,40);
         t3 = new JTextField();
         t3.setBounds(250,300,140,40);
@@ -46,7 +48,9 @@ public class customerframe extends JFrame   {
         add(b1);
         add(b2);
         
-        
+        MyActionListener a = new MyActionListener();
+        b1.addActionListener(a);
+        b2.addActionListener(a);
         
         //setLayout(new BorderLayout());
         setVisible(true);
@@ -59,20 +63,36 @@ public class customerframe extends JFrame   {
     {
         public void actionPerformed(ActionEvent ae)
         {
+            validations v = new validations();
             if(ae.getActionCommand().equals("Enter"))
             {
-                if(t1.getText().equals("")|| t2.getText().equals(""))
+                if(t1.getText().equals("")|| t2.getText().equals("")||t3.getText().equals(""))
                 {
-                    JOptionPane.showMessageDialog(frame,"Fill both Boxes");
+                    JOptionPane.showMessageDialog(frame,"Fill all Boxes");
                 }
 
-                else{
+                else if(v.checkString(t1.getText()) && v.checkNumber(t2.getText()) && v.checkNumber(t3.getText()))
+                {
                     String name = t1.getText() ;
                     int id = Integer.parseInt(t2.getText());
                     String num = t3.getText();
-                    Manager M1 = new Manager(id, name, num);
+                    Customer C1 = new Customer(id, name, num);
+                    dispose();
+                    // JOptionPane.showMessageDialog(frame,"CDCcd");
+                    
+                    Hallintermediateframe HIF = new Hallintermediateframe();
+                }
+                else{
+                   JOptionPane.showMessageDialog(frame,"Incorrect Input");
                     
                 }
+            }
+
+            else 
+            {
+                t1.setText("");
+                t2.setText("");
+                t3.setText("");
             }
         }
     }

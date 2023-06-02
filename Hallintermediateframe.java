@@ -124,8 +124,8 @@ public class Hallintermediateframe extends JFrame {
                     int id = Integer.parseInt(t2.getText());
                     String num = t3.getText();
                     Customer C1 = new Customer(id, name, num);
+                    JOptionPane.showMessageDialog(frame,"Changed");
                     dispose();
-                    // JOptionPane.showMessageDialog(frame,"CDCcd");
                     
                     Hallintermediateframe HIF = new Hallintermediateframe();
                 }

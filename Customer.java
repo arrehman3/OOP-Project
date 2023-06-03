@@ -30,6 +30,12 @@ public class Customer implements Serializable{
     public String getContactNumber() {
         return contactNumber;
     }
+
+    public String toString()
+    {
+        return "Name: " + name + "\n" + "CustomerId: "+ customerId + "\n" +"ContactNo: "+ contactNumber;
+    }
+    
     public void display(){
         System.out.println("*************************");
         System.out.println("");

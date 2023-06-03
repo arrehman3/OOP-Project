@@ -97,7 +97,8 @@ public class ConferenceHallFrame extends JFrame {
                     int seats = Integer.parseInt(t3.getText());
                     ConferenceHall CH = new ConferenceHall(id, name, seats, 200);
                     dispose();
-                    CateringSystemFrame CSF = new CateringSystemFrame();
+                    JOptionPane.showMessageDialog(frame,CH.toString());
+                    CateringSystemConferenceframe CSF = new CateringSystemConferenceframe();
                     JOptionPane.showMessageDialog(frame,"Succesfull");
                     
                     // Hallintermediateframe HIF = new Hallintermediateframe();

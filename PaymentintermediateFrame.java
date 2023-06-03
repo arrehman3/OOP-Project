@@ -4,21 +4,23 @@ import java.awt.event.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class Hallintermediateframe extends JFrame {
+public class PaymentintermediateFrame extends JFrame {
 
     
     public JFrame frame;
-   
-    public JButton b1,b2;
+    public JLabel l1,l2,l3,l0,L0;
+    public JButton b1,b2,b3;
+    public JPanel panel;
+    public JTextField t1,t2,t3;
 
-    Hallintermediateframe()
+    PaymentintermediateFrame()
     {
-        setTitle("Hall Management System");
+        setTitle("Payment System");
         setExtendedState(MAXIMIZED_BOTH);
         setLayout(new GridLayout(2,2));
         
-        b1 = new JButton("Wedding Hall");
-        b2 = new JButton("Conference Hall");
+        b1 = new JButton("VISA Payment");
+        b2 = new JButton("Cash Payment");
 
         
         add(b1);
@@ -39,17 +41,17 @@ public class Hallintermediateframe extends JFrame {
 
     public class MyActionListener implements ActionListener{
         public void actionPerformed(ActionEvent ae) {
-            if(ae.getActionCommand().equals("Wedding Hall"))
+            if(ae.getActionCommand().equals("Visa Payment"))
             {
                 // WeddingHallFrame WHF = new WeddingHallFrame();
-                // JOptionPane.showMessageDialog(frame,"321fdsa");
+                JOptionPane.showMessageDialog(frame,"321fdsa");
                 dispose();
-                WeddingHallFrame WHF = new WeddingHallFrame();
+                CardPaymentFrame VPF = new CardPaymentFrame();
             }
-            else if(ae.getActionCommand().equals("Conference Hall"))
+            else if(ae.getActionCommand().equals("Cash Payment"))
             {
                 dispose();
-                ConferenceHallFrame CHF = new ConferenceHallFrame();
+                CashPaymentFrame CPF = new CashPaymentFrame();
             }
             else{
                 JOptionPane.showMessageDialog(frame,"Nothing Happened");
@@ -57,4 +59,5 @@ public class Hallintermediateframe extends JFrame {
         }    
     }
 }
+
 

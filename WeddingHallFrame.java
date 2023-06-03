@@ -11,7 +11,6 @@ public class WeddingHallFrame extends JFrame {
 
     WeddingHallFrame()
     {
-        // System.out.println("33333333333333333333333333333333333333333");
         setTitle("Hall Management System");
         setExtendedState(MAXIMIZED_BOTH);
         setLayout(null);
@@ -97,6 +96,7 @@ public class WeddingHallFrame extends JFrame {
                     int seats = Integer.parseInt(t3.getText());
                     WeddingHall WH1 = new WeddingHall(id, name, seats, 2000);
                     dispose();
+                    JOptionPane.showMessageDialog(frame,WH1.toString());
                     CateringSystemFrame CSF = new CateringSystemFrame();
                     // JOptionPane.showMessageDialog(frame,"Succesfull");
                     

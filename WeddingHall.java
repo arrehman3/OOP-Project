@@ -28,6 +28,11 @@ class WeddingHall extends Hall implements Serializable{
         double baseRent = getNoOfSeats() * 568;
         return baseRent;
     }
+
+    public String toString()
+    {
+        return super.toString() + "\n"+ "Capacity: "+capacity;
+    }
     public void display(){
         System.out.println("*************************");
         System.out.println("");

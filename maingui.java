@@ -73,12 +73,22 @@ public class maingui extends JFrame  {
                 }
 
                 else if (v.checkString(t1.getText()) && v.checkNumber(t2.getText()) && v.checkNumber(t3.getText())){
-                    String name = t1.getText() ;
-                    int id = Integer.parseInt(t2.getText());
-                    String num = t3.getText();
-                    Manager M1 = new Manager(id, name, num);
-                    dispose();
-                    customerframe cf = new customerframe();
+                    if(t1.getText().equals("xyz") && t2.getText().equals("1122") && t3.getText().equals("03001234567"))
+                    {
+                        String name = t1.getText() ;
+                        int id = Integer.parseInt(t2.getText());
+                        String num = t3.getText();
+                        Manager M1 = new Manager(id, name, num);
+                        dispose();
+                        customerframe cf = new customerframe();
+                    }
+                    else {
+                        JOptionPane.showMessageDialog(frame,"INVALID CRESIDENTIALS");
+                        JOptionPane.showMessageDialog(frame,"Enter Again");
+                        t1.setText(" ");
+                        t2.setText(" ");
+                        t3.setText(" ");
+                    }    
                     
                 }
                 else{

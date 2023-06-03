@@ -41,6 +41,11 @@ public abstract class Hall implements Serializable{
         this.availability = availability;
     }
 
+    public String toString()
+    {
+        return "Hall Name: "+hallName +"\n"+"Hall id: "+hallId+"\n"+"No. of Seats: "+NoOfSeats;
+    }
+
     // Abstract method for calculating hall rent
     public abstract double calculateRent();
 }

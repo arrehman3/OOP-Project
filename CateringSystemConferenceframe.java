@@ -3,14 +3,14 @@ import java.util.*;
 import java.awt.*;
 import javax.swing.*;
 import java.awt.event.*;
-public class CateringSystemFrame extends JFrame {
+public class CateringSystemConferenceframe extends JFrame {
     
     public JTextField t1,t2,t3,t4,t5,t6,t7,t8,t9,t10;
     public JFrame frame;
     public JLabel l0,l1,l2,l3,L0,l4,l5,l6,l7,l8,l9,l10;
     public JButton b1,b2,b3;   
 
-    CateringSystemFrame()
+    CateringSystemConferenceframe()
     {
         // System.out.println("33333333333333333333333333333333333333333");
         setTitle("Hall Management System");
@@ -145,7 +145,7 @@ public class CateringSystemFrame extends JFrame {
                     //ConferenceHall CH = new ConferenceHall(id, name, seats, 200);
                     dispose();
                     JOptionPane.showMessageDialog(frame,CS.toString());
-                    Wbookingframe Wf = new Wbookingframe();
+                    CBookingframe Cbf = new CBookingframe();
                     // CateringSystemFrame CSF = new CateringSystemFrame();
                     //JOptionPane.showMessageDialog(frame,"Succesfull");
                     
@@ -176,3 +176,4 @@ public class CateringSystemFrame extends JFrame {
 
 
 }
+

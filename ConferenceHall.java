@@ -22,6 +22,11 @@ public class ConferenceHall extends Hall implements Serializable {
             System.out.println("Sorry Maximum Capacity is 200 seats for conference. ");
         }
     }
+
+    public String toString()
+    {
+        return super.toString()+"\n"+"Capacity: "+capacity;
+    }
     @Override
     public double calculateRent() {
         // Calculate rent based on capacity and number of seats

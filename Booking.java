@@ -119,4 +119,16 @@ public class Booking implements Serializable{
 
         return slots;
     }
+
+    public void removetimeslot(String date,String slot)
+    {
+        List<String> temp = getAvailableSlots(date);
+        if(temp.contains(slot))
+        {
+            temp.remove(slot);
+            if(temp.isEmpty()){
+                availableDates.remove(date);
+            }
+        }
+    }
 }

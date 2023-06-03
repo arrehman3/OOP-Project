@@ -3,14 +3,18 @@ import java.awt.*;
 import java.awt.event.*;
 
 public class WeddingHallFrame extends JFrame {
-    
+    private Manager M;
+    private Customer C;
+    //private Hallintermediateframe H;
     public JTextField t1,t2,t3;
     public JFrame frame;
     public JLabel l0,l1,l2,l3,L0;
     public JButton b1,b2,b3;   
 
-    WeddingHallFrame()
+    WeddingHallFrame(Manager M,Customer C)
     {
+        this.M=M;
+        this.C=C;
         setTitle("Hall Management System");
         setExtendedState(MAXIMIZED_BOTH);
         setLayout(null);
@@ -94,10 +98,11 @@ public class WeddingHallFrame extends JFrame {
                     String name = t1.getText() ;
                     int id = Integer.parseInt(t2.getText());
                     int seats = Integer.parseInt(t3.getText());
-                    WeddingHall WH1 = new WeddingHall(id, name, seats, 2000);
+                    Hall H = new WeddingHall(id, name, seats, 2000);
+                    //WeddingHall WH1 = new WeddingHall(id, name, seats, 2000);
                     dispose();
-                    JOptionPane.showMessageDialog(frame,WH1.toString());
-                    CateringSystemFrame CSF = new CateringSystemFrame();
+                    JOptionPane.showMessageDialog(frame,H.toString());
+                    CateringSystemFrame CSF = new CateringSystemFrame(M,C,H);
                     // JOptionPane.showMessageDialog(frame,"Succesfull");
                     
                     // Hallintermediateframe HIF = new Hallintermediateframe();

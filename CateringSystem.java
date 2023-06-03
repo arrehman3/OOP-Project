@@ -34,8 +34,8 @@ public class CateringSystem implements Serializable{
         // pricesPerSeat = newPricesPerSeat;
     }
     
-    public double getPricePerSeat(double[]pricesPerItem) {
-        double total = 0;
+    public double getPricePerSeat() {
+        double total = 0.0;
         for(double i : pricesPerItem )
         {
             total += i;
@@ -47,4 +47,5 @@ public class CateringSystem implements Serializable{
     {
         return "Dish1:"+foodItems[0]+"\n"+"Price: "+pricesPerItem[0]+"\n"+"Dish2:"+foodItems[1]+"\n"+"Price: "+pricesPerItem[1]+"\n"+"Dish3:"+foodItems[2]+"\n"+"Price: "+pricesPerItem[2]+"\n"+"Dish4:"+foodItems[3]+"\n"+"Price: "+pricesPerItem[3]+"\n"+"Dish5:"+foodItems[4]+"\n"+"Price: "+pricesPerItem[4];
     }
+
 }

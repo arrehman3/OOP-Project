@@ -1,16 +1,22 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.awt.print.Book;
 
 public class ConferenceHallFrame extends JFrame {
+    private Manager M;
+    private Customer C;
     
+    //private Hallintermediateframe H;
     public JTextField t1,t2,t3;
     public JFrame frame;
     public JLabel l0,l1,l2,l3,L0;
     public JButton b1,b2,b3;   
 
-    ConferenceHallFrame()
+    ConferenceHallFrame(Manager M,Customer C)
     {
+        this.M=M;
+        this.C=C;
         // System.out.println("33333333333333333333333333333333333333333");
         setTitle("Hall Management System");
         setExtendedState(MAXIMIZED_BOTH);
@@ -95,11 +101,13 @@ public class ConferenceHallFrame extends JFrame {
                     String name = t1.getText() ;
                     int id = Integer.parseInt(t2.getText());
                     int seats = Integer.parseInt(t3.getText());
-                    ConferenceHall CH = new ConferenceHall(id, name, seats, 200);
+                    Hall H = new ConferenceHall(id, name, seats, 200);
+                    //ConferenceHall CH = new ConferenceHall(id, name, seats, 200);
                     dispose();
-                    JOptionPane.showMessageDialog(frame,CH.toString());
-                    CateringSystemConferenceframe CSF = new CateringSystemConferenceframe();
-                    JOptionPane.showMessageDialog(frame,"Succesfull");
+                    JOptionPane.showMessageDialog(frame,H.toString());
+                    CateringSystemFrame CS = new CateringSystemFrame(M,C,H);
+                    //CateringSystemConferenceframe CSF = new CateringSystemConferenceframe(M,C,H);
+                    //JOptionPane.showMessageDialog(frame,"Succesfull");
                     
                     // Hallintermediateframe HIF = new Hallintermediateframe();
                 }

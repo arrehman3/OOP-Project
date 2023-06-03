@@ -6,13 +6,16 @@ import java.awt.event.ActionListener;
 
 public class Hallintermediateframe extends JFrame {
 
-    
+    private Manager M;
+    private Customer C;
     public JFrame frame;
    
     public JButton b1,b2;
 
-    Hallintermediateframe()
+    Hallintermediateframe(Manager M,Customer C)
     {
+        this.M = M;
+        this.C = C;
         setTitle("Hall Management System");
         setExtendedState(MAXIMIZED_BOTH);
         setLayout(new GridLayout(2,2));
@@ -44,12 +47,12 @@ public class Hallintermediateframe extends JFrame {
                 // WeddingHallFrame WHF = new WeddingHallFrame();
                 // JOptionPane.showMessageDialog(frame,"321fdsa");
                 dispose();
-                WeddingHallFrame WHF = new WeddingHallFrame();
+                WeddingHallFrame WHF = new WeddingHallFrame(M,C);
             }
             else if(ae.getActionCommand().equals("Conference Hall"))
             {
                 dispose();
-                ConferenceHallFrame CHF = new ConferenceHallFrame();
+                ConferenceHallFrame CHF = new ConferenceHallFrame(M,C);
             }
             else{
                 JOptionPane.showMessageDialog(frame,"Nothing Happened");

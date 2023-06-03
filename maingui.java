@@ -80,7 +80,7 @@ public class maingui extends JFrame  {
                         String num = t3.getText();
                         Manager M1 = new Manager(id, name, num);
                         dispose();
-                        customerframe cf = new customerframe();
+                        customerframe cf = new customerframe(M1);
                     }
                     else {
                         JOptionPane.showMessageDialog(frame,"INVALID CRESIDENTIALS");

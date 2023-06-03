@@ -20,7 +20,9 @@ public class Receipt implements Serializable{
 
     public void displayReceipt() {
         System.out.println("\n\n*************** Receipt ***************\n");
-        System.out.println("\nBooking id : " + booking.getBookingId()+" \n");
+        System.out.println("\nHall id : " + hall.getHallId());
+        System.out.println("Hall Name : " + hall.getHallName());
+        //System.out.println("\nBooking id : " + booking.getBookingId()+" \n");
         System.out.println("\nCustomer id : " + customer.getCustomerId());
         System.out.println("Customer Name : " + customer.getName());
         System.out.println("Customer Contact Number : " + customer.getContactNumber()+" \n");
@@ -28,27 +30,52 @@ public class Receipt implements Serializable{
         System.out.println("Manager Name : " + manager.getName());
         System.out.println("Manager Contact Number : " + manager.getContactNumber()+" \n");
         
-        System.out.println("\nHall id : " + hall.getHallId());
-        System.out.println("Hall Type : " + hall.getHallName());
+        
         System.out.println("Seats for booking : " + hall.getNoOfSeats());
         System.out.println("Amount without cattering : "+hall.calculateRent());
 
         System.out.println("Food Items with Prices :: ");
     
         double CatteringPrice = 0.0; 
-        for (int i = 0; i < cateringSystem.getFoodItems().size(); i++) {
-            String itemName = cateringSystem.getFoodItems().get(i);
-            double price = cateringSystem.getPricePerSeat(itemName);
+        String [] fooditems = cateringSystem.getFoodItems();
+        //Double [] price = cateringSystem.getPricePerSeat();
+        for (int i = 0; i < fooditems.length; i++) {
+            String itemName = fooditems[i];
+            double price = cateringSystem.getPricePerSeat();
             double itemTotalPrice = price * hall.getNoOfSeats();
             CatteringPrice += itemTotalPrice;
             System.out.println(" - "+i + " Item Name : " + itemName + "\n    Item Price   $ : " + price);
         }
+        
 
         System.out.println("\nTotal Amount of Cattering : " + CatteringPrice +"\n");
         System.out.println("Total Rent of Hall : "+hall.calculateRent()+"\n");
         double total = CatteringPrice + hall.calculateRent();
-        System.out.println("\nTotal Amount of Booking id : "+booking.getBookingId()+" is " + total +"\n");
+        System.out.println("\nTotal Amount of Booking id : "+hall.getHallId()+" is " + total +"\n");
         System.out.println("-----------------------------------------");
+    }
+    public Hall getHall() {
+        return hall;
+    }
+
+    public Customer getCustomer() {
+        return customer;
+    }
+
+    public Manager getManager() {
+        return manager;
+    }
+
+    public CateringSystem getCateringSystem() {
+        return cateringSystem;
+    }
+
+    public Booking getBooking() {
+        return booking;
+    }
+
+    public String getReceipt() {
+        return receipt;
     }
     public void writeToFile() {
         try {
@@ -63,7 +90,7 @@ public class Receipt implements Serializable{
                 System.out.println("New file created: " + file.getName());
             }
 
-            ObjectOutputStream objectOutputStream = new ObjectOutputStream(new FileOutputStream(file));
+            ObjectOutputStream objectOutputStream = new ObjectOutputStream(new FileOutputStream(file,true));
             Receipt receipt = new Receipt(hall , manager , customer , cateringSystem , booking );
             objectOutputStream.writeObject(receipt);
             objectOutputStream.close();
@@ -101,4 +128,6 @@ public class Receipt implements Serializable{
     public void setReceiptData(String receipt) {
         this.receipt = receipt;
     }
+
+    
 }

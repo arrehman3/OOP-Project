@@ -80,7 +80,7 @@ public class CardPaymentFrame extends JFrame {
                         dispose();
                         JOptionPane.showMessageDialog(frame,"Payment Successful");
                         
-                        Hallintermediateframe HIF = new Hallintermediateframe();
+                        //Hallintermediateframe HIF = new Hallintermediateframe();
                     }
                     else{
                     JOptionPane.showMessageDialog(frame,"Incorrect Input");

@@ -7,13 +7,19 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class customerframe extends JFrame   {
-    public JTextField t1,t2,t3;
-    public JFrame frame;
-    public JLabel l0,l1,l2,l3,L0;
-    public JButton b1,b2,b3;   
+    
+    private Manager M;
+    private JTextField t1,t2,t3;
+    private JFrame frame;
+    private JLabel l0,l1,l2,l3,L0;
+    private JButton b1,b2,b3;   
 
-    customerframe()
+    customerframe(Manager M)
+
+    
     {
+
+        this.M = M;
         setTitle("Hall Management System");
         setExtendedState(MAXIMIZED_BOTH);
         setLayout(null);
@@ -79,8 +85,9 @@ public class customerframe extends JFrame   {
                     Customer C1 = new Customer(id, name, num);
                     dispose();
                     JOptionPane.showMessageDialog(frame,C1.toString());
+
                     
-                    Hallintermediateframe HIF = new Hallintermediateframe();
+                    Hallintermediateframe HIF = new Hallintermediateframe(M,C1);
                 }
                 else{
                    JOptionPane.showMessageDialog(frame,"Incorrect Input");

@@ -4,13 +4,16 @@ import java.awt.*;
 import javax.swing.*;
 import java.awt.event.*;
 public class CateringSystemConferenceframe extends JFrame {
+    private Manager M;
+    private Customer C;
+    private Hall H;
     
     public JTextField t1,t2,t3,t4,t5,t6,t7,t8,t9,t10;
     public JFrame frame;
     public JLabel l0,l1,l2,l3,L0,l4,l5,l6,l7,l8,l9,l10;
     public JButton b1,b2,b3;   
 
-    CateringSystemConferenceframe()
+    CateringSystemConferenceframe(Manager M,Customer C,Hall H)
     {
         // System.out.println("33333333333333333333333333333333333333333");
         setTitle("Hall Management System");

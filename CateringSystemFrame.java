@@ -4,14 +4,23 @@ import java.awt.*;
 import javax.swing.*;
 import java.awt.event.*;
 public class CateringSystemFrame extends JFrame {
+    private Manager M;
+    private Customer C;
+    private Hall H;
+    // private WeddingHall WH;
+    // private ConferenceHall CH;
     
     public JTextField t1,t2,t3,t4,t5,t6,t7,t8,t9,t10;
     public JFrame frame;
     public JLabel l0,l1,l2,l3,L0,l4,l5,l6,l7,l8,l9,l10;
     public JButton b1,b2,b3;   
 
-    CateringSystemFrame()
+
+    CateringSystemFrame(Manager M,Customer C,Hall H)
     {
+        this.M=M;
+        this.C=C;
+        this.H=H;
         // System.out.println("33333333333333333333333333333333333333333");
         setTitle("Hall Management System");
         setExtendedState(MAXIMIZED_BOTH);
@@ -105,6 +114,7 @@ public class CateringSystemFrame extends JFrame {
 
 
     }
+    
 
     public class MyActionListener implements ActionListener
     {
@@ -145,7 +155,8 @@ public class CateringSystemFrame extends JFrame {
                     //ConferenceHall CH = new ConferenceHall(id, name, seats, 200);
                     dispose();
                     JOptionPane.showMessageDialog(frame,CS.toString());
-                    Wbookingframe Wf = new Wbookingframe();
+                    Bookingframe bf = new Bookingframe(M, C, H,CS);
+                    //Wbookingframe Wf = new Wbookingframe();
                     // CateringSystemFrame CSF = new CateringSystemFrame();
                     //JOptionPane.showMessageDialog(frame,"Succesfull");
                     

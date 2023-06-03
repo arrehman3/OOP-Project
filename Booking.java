@@ -1,14 +1,14 @@
 import java.io.*;
 import java.util.*;
 public class Booking implements Serializable{
-    private int bookingId;
+    // private int bookingId;
     private Hall hall;
     private Customer customer;
     private Manager manager;
-    private List<String> availableDates;
+    private ArrayList<String> availableDates;
 
-    public Booking(int bookingId, Hall hall, Customer customer, Manager manager) {
-        this.bookingId = bookingId;
+    public Booking( Hall hall, Customer customer, Manager manager) {
+        // this.bookingId = bookingId;
         this.hall = hall;
         this.customer = customer;
         this.manager = manager;
@@ -16,9 +16,9 @@ public class Booking implements Serializable{
         initializeAvailableDates();
     }
 
-    public int getBookingId() {
-        return bookingId;
-    }
+    // public int getBookingId() {
+    //     return bookingId;
+    // }
 
     public Hall getHall() {
         return hall;
@@ -32,7 +32,7 @@ public class Booking implements Serializable{
         return customer;
     }
 
-    public List<String> getAvailableDates() {
+    public ArrayList<String> getAvailableDates() {
         return availableDates;
     }
 
@@ -73,7 +73,7 @@ public class Booking implements Serializable{
             if (availableSlots.contains(selectedSlot)) {
                 System.out.println("\n\n*************************");
                 System.out.println("");
-                System.out.println("Booking id :" +getBookingId());
+                //System.out.println("Booking id :" +getBookingId());
                 System.out.println("Customer id :"+customer.getCustomerId());
                 System.out.println("Customer Name :"+customer.getName());
                 System.out.println("Customer Contact Number :"+customer.getContactNumber());
@@ -93,12 +93,9 @@ public class Booking implements Serializable{
         }
     }
 
-    private List<String> getAvailableSlots(String date) {
-        // Implement the logic to retrieve available time slots for the given date
-        // You can fetch the slots from a data source or calculate them dynamically
-        // For the sake of example, we'll use a predefined list of slots
+    private ArrayList<String> getAvailableSlots(String date) {
 
-        List<String> slots = new ArrayList<>();
+        ArrayList<String> slots = new ArrayList<>();
 
         if (date.equals("2023-05-19")) {
             slots.add("10:00 AM - 12:00 PM");

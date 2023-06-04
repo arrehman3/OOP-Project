@@ -16,6 +16,9 @@ public class CateringSystemConferenceframe extends JFrame {
 
     CateringSystemConferenceframe(Manager M,Customer C,Hall H)
     {
+        this.M=M;
+        this.C=C;
+        this.H=H;
         // System.out.println("33333333333333333333333333333333333333333");
         setTitle("Hall Management System");
         setSize(800,700);
@@ -167,7 +170,7 @@ public class CateringSystemConferenceframe extends JFrame {
                     //ConferenceHall CH = new ConferenceHall(id, name, seats, 200);
                     dispose();
                     JOptionPane.showMessageDialog(frame,CS.toString());
-                    CBookingframe Cbf = new CBookingframe();
+                    //CBookingframe Cbf = new CBookingframe();
                     // CateringSystemFrame CSF = new CateringSystemFrame();
                     //JOptionPane.showMessageDialog(frame,"Succesfull");
                     

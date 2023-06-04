@@ -123,6 +123,7 @@ public class Bookingframe extends JFrame {
             {
                 if(ae.getActionCommand().equals("Enter"))
                 {
+                    dispose();
                     Booking B = new Booking(H,C,M);
                     //Receipt R = new Receipt(H, M, C, CS, B);
                     ReceiptFrame RF = new ReceiptFrame(M,C,H,B,CS);

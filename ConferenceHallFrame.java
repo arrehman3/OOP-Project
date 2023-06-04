@@ -10,8 +10,9 @@ public class ConferenceHallFrame extends JFrame {
     //private Hallintermediateframe H;
     public JTextField t1,t2,t3;
     public JFrame frame;
-    public JLabel l0,l1,l2,l3,L0;
-    public JButton b1,b2,b3;   
+    public JLabel backgroundimage,l0,l1,l2,l3,L0;
+    public JButton b1,b2,b3; 
+    public ImageIcon image;  
 
     ConferenceHallFrame(Manager M,Customer C)
     {
@@ -19,25 +20,36 @@ public class ConferenceHallFrame extends JFrame {
         this.C=C;
         // System.out.println("33333333333333333333333333333333333333333");
         setTitle("Hall Management System");
-        setExtendedState(MAXIMIZED_BOTH);
+        setSize(800,600);
         setLayout(null);
+        try{
+            image = new ImageIcon("C:/Users/Pc/Pictures/conference 1.2.jpg");  
+        }
+        catch(Exception e)
+        {
+            System.out.println("conference hall error");
+        }
         Font font = new Font("Arial",Font.BOLD,40);
         L0 = new JLabel("Welcome to Conference Hall");
         L0.setFont(font);
         L0.setBounds(10,30,2000,50);
+        L0.setOpaque(true);
         
         
         // l0 = new JLabel("Add Manager Details");
         l1 = new JLabel("Enter Hall Name:");
         l1.setBounds(100,100,130,40);
+        l1.setOpaque(true);
         t1 = new JTextField();
         t1.setBounds(250,100,140,40);
         l2 = new JLabel("Enter hall Id:");
         l2.setBounds(100,200,120,40);
+        l2.setOpaque(true);
         t2 = new JTextField();
         t2.setBounds(250,200,140,40);
         l3 = new JLabel("No of Seats:");
         l3.setBounds(100,300,140,40);
+        l3.setOpaque(true);
         t3 = new JTextField();
         // int temp = Integer.parseInt(t3.getText());
         // if (temp>2000) {
@@ -47,9 +59,12 @@ public class ConferenceHallFrame extends JFrame {
         // }
         t3.setBounds(250,300,140,40);
         b1 = new JButton("Enter");
-        b1.setBounds(150,400,140,40);
+        b1.setBounds(100,400,140,40);
         b2 = new JButton("Clear");
-        b2.setBounds(300,400,140,40);
+        b2.setBounds(250,400,140,40);
+        backgroundimage = new JLabel(image);
+        backgroundimage.setBounds(0,-20,this.getWidth(),this.getHeight());
+
         add(L0);
         // add(l0);
         add(l1);add(t1);
@@ -57,6 +72,7 @@ public class ConferenceHallFrame extends JFrame {
         add(l3);add(t3);
         add(b1);
         add(b2);
+        add(backgroundimage);
 
         // int temp = Integer.parseInt(t3.getText());
         // if (temp>2000) {

@@ -10,32 +10,41 @@ public class CateringSystemConferenceframe extends JFrame {
     
     public JTextField t1,t2,t3,t4,t5,t6,t7,t8,t9,t10;
     public JFrame frame;
-    public JLabel l0,l1,l2,l3,L0,l4,l5,l6,l7,l8,l9,l10;
-    public JButton b1,b2,b3;   
+    public JLabel backgroundimage,l0,l1,l2,l3,L0,l4,l5,l6,l7,l8,l9,l10;
+    public JButton b1,b2,b3; 
+    public ImageIcon image;  
 
     CateringSystemConferenceframe(Manager M,Customer C,Hall H)
     {
         // System.out.println("33333333333333333333333333333333333333333");
         setTitle("Hall Management System");
-        setExtendedState(MAXIMIZED_BOTH);
+        setSize(800,700);
         setLayout(null);
+        try{
+            image = new ImageIcon("C:/Users/Pc/Pictures/cateringsystem1.1.jpeg"); 
+        }catch(Exception e)
+        {
+            System.out.println("Catering image issue");
+        }
         Font font = new Font("Arial",Font.BOLD,40);
         L0 = new JLabel("Welcome to Catering Arrangements");
         L0.setFont(font);
         L0.setBounds(10,30,2000,50);
-        
-        
+        L0.setOpaque(true);
         // l0 = new JLabel("Add Manager Details");
         l1 = new JLabel("Enter Dish 1 :");
         l1.setBounds(100,100,130,40);
+        l1.setOpaque(true);
         t1 = new JTextField();
         t1.setBounds(250,100,140,40);
         l2 = new JLabel("Enter Dish 1 Price:");
         l2.setBounds(100,150,120,40);
+        l2.setOpaque(true);
         t2 = new JTextField();
         t2.setBounds(250,150,140,40);
         l3 = new JLabel("Enter Dish 2:");
         l3.setBounds(100,200,140,40);
+        l3.setOpaque(true);
         t3 = new JTextField();
         // int temp = Integer.parseInt(t3.getText());
         // if (temp>2000) {
@@ -46,36 +55,45 @@ public class CateringSystemConferenceframe extends JFrame {
         t3.setBounds(250,200,140,40);
         l4 = new JLabel("Enter Dish 2 Price:");
         l4.setBounds(100,250,140,40);
+        l4.setOpaque(true);
         t4 = new JTextField();
         t4.setBounds(250,250,140,40);
         l5 = new JLabel("Enter Dish 3");
         l5.setBounds(100,300,140,40);
+        l5.setOpaque(false);
         t5 = new JTextField();
         t5.setBounds(250,300,140,40);
         l6 = new JLabel("Enter Dish 3 Price :");
         l6.setBounds(100, 350, 140,40);
+        l6.setOpaque(false);
         t6 = new JTextField();
         t6.setBounds(250,350,140,40);
         l7 = new JLabel("Enter Dish 4 :");
         l7.setBounds(100,400,140,40);
+        l7.setOpaque(false);
         t7 = new JTextField();
         t7.setBounds(250,400,140,40);
         l8 = new JLabel("Enter Dish 4 Price :");
         l8.setBounds(100,450,140,40);
+        l8.setOpaque(false);
         t8 = new JTextField();
         t8.setBounds(250,450,140,40);
         l9 = new JLabel("Enter Dish 5 :");
         l9.setBounds(100,500,140,40);
+        l9.setOpaque(false);
         t9 = new JTextField();
         t9.setBounds(250,500,140,40);
         l10 = new JLabel("Enter Dish 5 Price :");
         l10.setBounds(100,550,140,40);
+        l10.setOpaque(false);
         t10 = new JTextField();
         t10.setBounds(250,550,140,40);
         b1 = new JButton("Enter");
         b1.setBounds(150,600,140,40);
         b2 = new JButton("Clear");
         b2.setBounds(300,600,140,40);
+        backgroundimage = new JLabel(image);
+        backgroundimage.setBounds(0,-20,getWidth(),getHeight());
         add(L0);
         // add(l0);
         add(l1);add(t1);
@@ -90,6 +108,7 @@ public class CateringSystemConferenceframe extends JFrame {
         add(l10);add(t10);
         add(b1);
         add(b2);
+        add(backgroundimage);
 
         // int temp = Integer.parseInt(t3.getText());
         // if (temp>2000) {

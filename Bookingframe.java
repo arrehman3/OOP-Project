@@ -1,5 +1,4 @@
 import javax.swing.*;
-
 import java.awt.Frame;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -14,7 +13,7 @@ public class Bookingframe extends JFrame {
 
     private JComboBox<String> timeSlotComboBox;
     private ArrayList<String> datesAndTimeSlots;
-    private ArrayList<String> AvailabeTimeSlot;
+    //private ArrayList<String> AvailabeTimeSlot;
     private JButton button;
 
     public Bookingframe(Manager M,Customer C,Hall H,CateringSystem CS)  {
@@ -22,49 +21,44 @@ public class Bookingframe extends JFrame {
         this.C=C;
         this.H=H;
         this.CS=CS;
-        // setExtendedState(MAXIMIZED_BOTH);
+        
         setVisible(true);
-        // setDefaultCloseOperation(EXIT_ON_CLOSE);
-        // Initialize your datesAndTimeSlots ArrayList and populate it with data
+        
         Booking B = new Booking(H,C,M);
         datesAndTimeSlots = B.getAvailableDates();
-        // Create GUI components
+        
         JLabel dateLabel = new JLabel("Select a date:");
-        // Assuming you have a date selection component named 'datePicker'
+        
         JComboBox<String> datePicker = new JComboBox<>(datesAndTimeSlots.toArray(new String[0]));
         datePicker.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                // Retrieve the selected date
+                
                 String selectedDate = (String) datePicker.getSelectedItem();
+                String selsectedTime = (String) timeSlotComboBox.getSelectedItem();
 
-                // Search for available time slots for the selected date
+                
                 ArrayList<String> availableTimeSlots = searchTimeSlots(selectedDate);
 
-                // Update the time slots in the JComboBox or drop-down menu
+                
                 updateComboBoxOptions(availableTimeSlots);
                 
+                int selsectedIndex = timeSlotComboBox.getSelectedIndex();
 
-                // if(e.getActionCommand().equals("Enter"))
-                // {
-                //     JOptionPane.showMessageDialog(Frame,"s");
-                // }
+                if(selsectedIndex!=1)
+                {
+                    timeSlotComboBox.removeItemAt(selsectedIndex);
+                }
+                
             }
         });
 
-        // button.addActionListener(new ActionListener() {
-        //     public void actionPerformed(ActionEvent e)
-        //     {
-        //         JOptionPane.showMessageDialog(null,"d");
-        //     }
-        // });
+        
         
         MyActionListener a = new MyActionListener();
             
         
-        // public class MyActionListener implement ActionListener{
-        //     @Override
-        // }
+        
         
 
         button = new JButton("Enter");
@@ -80,7 +74,7 @@ public class Bookingframe extends JFrame {
         panel.add(timeSlotComboBox);
         panel.add(button);
 
-        // Set up JFrame properties
+        
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setTitle("Time Slot Management System");
         setSize(400, 200);
@@ -89,14 +83,7 @@ public class Bookingframe extends JFrame {
         setContentPane(panel);
     }
 
-    // private ArrayList<String> searchTimeSlots(String selectedDate) {
-    //     // Search and retrieve the available time slots for the selected date
-    //     // You can implement your logic here to fetch the time slots from your data source
-    //     // and return them as an ArrayList
-    //     // For simplicity, let's assume you have a method 'fetchTimeSlots' that returns the time slots
-    //     //return fetchTimeSlots(selectedDate);
-
-    // }
+    
     private ArrayList<String> searchTimeSlots(String date) {
 
         ArrayList<String> slots = new ArrayList<>();
@@ -116,7 +103,7 @@ public class Bookingframe extends JFrame {
             slots.add("7:00 PM - 10:00 PM");
         }
 
-        // Add more logic to fetch slots based on your requirements
+        
 
         return slots;
     }
@@ -129,20 +116,7 @@ public class Bookingframe extends JFrame {
         }
     }
 
-    // private ArrayList<String> fetchTimeSlots(String selectedDate) {
-    //     // Implement your logic to fetch the available time slots for the selected date from your data source
-    //     // For this example, let's assume you have the time slots stored in another ArrayList
-    //     // that corresponds to the selected date index in datesAndTimeSlots
-    //     int selectedIndex = datesAndTimeSlots.indexOf(selectedDate);
-    //     ArrayList<String> timeSlots = new ArrayList<>();
-
-    //     // Let's assume the available time slots are stored in another ArrayList named 'timeSlotsList'
-    //     if (selectedIndex >= 0 && selectedIndex < timeSlotsList.size()) {
-    //         timeSlots = timeSlotsList.get(selectedIndex);
-    //     }
-
-    //     return timeSlots;
-    // }
+    
 
         public class MyActionListener implements ActionListener{
             public void actionPerformed (ActionEvent ae)

@@ -17,7 +17,7 @@ public class Hallintermediateframe extends JFrame {
         this.M = M;
         this.C = C;
         setTitle("Hall Management System");
-        setExtendedState(MAXIMIZED_BOTH);
+        setSize(800,600);
         setLayout(new GridLayout(2,2));
         
         b1 = new JButton("Wedding Hall");

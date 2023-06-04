@@ -16,10 +16,11 @@ public class PaymentintermediateFrame extends JFrame {
     PaymentintermediateFrame()
     {
         setTitle("Payment System");
-        setExtendedState(MAXIMIZED_BOTH);
+        // setExtendedState(MAXIMIZED_BOTH);
+        setSize(800, 600);
         setLayout(new GridLayout(2,2));
         
-        b1 = new JButton("VISA Payment");
+        b1 = new JButton("Card Payment");
         b2 = new JButton("Cash Payment");
 
         
@@ -41,17 +42,18 @@ public class PaymentintermediateFrame extends JFrame {
 
     public class MyActionListener implements ActionListener{
         public void actionPerformed(ActionEvent ae) {
-            if(ae.getActionCommand().equals("Visa Payment"))
+            if(ae.getActionCommand().equals("Card Payment"))
             {
                 // WeddingHallFrame WHF = new WeddingHallFrame();
-                JOptionPane.showMessageDialog(frame,"321fdsa");
+                //JOptionPane.showMessageDialog(frame,"321fdsa");
                 dispose();
-                CardPaymentFrame VPF = new CardPaymentFrame();
+                CardPaymentFrame CPF = new CardPaymentFrame();
             }
             else if(ae.getActionCommand().equals("Cash Payment"))
             {
                 dispose();
-                CashPaymentFrame CPF = new CashPaymentFrame();
+                PaymentMethod payment = new CashPayment();
+                JOptionPane.showMessageDialog(frame,"successful");
             }
             else{
                 JOptionPane.showMessageDialog(frame,"Nothing Happened");

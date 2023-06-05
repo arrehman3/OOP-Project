@@ -1,5 +1,4 @@
 import java.io.*;
-import java.util.*;
 public class Receipt implements Serializable{
     private Hall hall;
     private Customer customer;

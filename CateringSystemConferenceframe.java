@@ -25,7 +25,7 @@ public class CateringSystemConferenceframe extends JFrame {
         setLayout(null);
         setResizable(false);
         try{
-            image = new ImageIcon("C:/Users/Pc/Pictures/cateringsystem1.1.jpeg"); 
+            image = new ImageIcon("cateringsystem1.1.jpeg"); 
         }catch(Exception e)
         {
             System.out.println("Catering image issue");

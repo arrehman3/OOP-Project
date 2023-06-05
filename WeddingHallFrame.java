@@ -20,7 +20,7 @@ public class WeddingHallFrame extends JFrame {
         setLayout(null);
         setResizable(false);
         try{
-            image = new ImageIcon("C:/Users/Pc/Pictures/wedding hall 1.0.jpeg");
+            image = new ImageIcon("wedding hall 1.0.jpeg");
         }
         catch(Exception e)
         {

@@ -19,7 +19,7 @@ public class CardPaymentFrame extends JFrame {
         setResizable(false);
         try{
             System.out.println("tried");
-            image = new ImageIcon("C:/Users/Pc/Pictures/cardpayment2.jpg");
+            image = new ImageIcon("cardpayment2.jpg");
         }catch(Exception e){
             System.out.println("Card error");
         }

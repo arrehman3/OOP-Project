@@ -26,7 +26,7 @@ public class customerframe extends JFrame   {
         setLayout(null);
         setResizable(false);
         try{
-            image = new ImageIcon("C:/Users/Pc/Pictures/main frame.jpg");
+            image = new ImageIcon("main frame.jpg");
         }
         catch(Exception e)
         {

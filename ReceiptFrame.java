@@ -32,7 +32,7 @@ public class ReceiptFrame extends JFrame  {
         setLayout(null);
         setResizable(false);
         try{
-            image = new ImageIcon("C:/Users/Pc/Pictures/receipt3.jpg");
+            image = new ImageIcon("receipt3.jpg");
         }catch(Exception e)
         {
             System.out.println("receipt error");

@@ -24,7 +24,7 @@ public class ConferenceHallFrame extends JFrame {
         setLayout(null);
         setResizable(false);
         try{
-            image = new ImageIcon("C:/Users/Pc/Pictures/conference 1.2.jpg");  
+            image = new ImageIcon("conference 1.2.jpg");  
         }
         catch(Exception e)
         {

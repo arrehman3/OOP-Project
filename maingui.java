@@ -20,7 +20,7 @@ public class maingui extends JFrame  {
         setResizable(false);
         try{
             System.out.println("tried");
-            image = new ImageIcon("C:/Users/Pc/Pictures/main frame.jpg");
+            image = new ImageIcon("main frame.jpg");
         }
         catch(Exception e)
         {

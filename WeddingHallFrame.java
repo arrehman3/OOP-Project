@@ -94,12 +94,12 @@ public class WeddingHallFrame extends JFrame {
             validations v = new validations();
             if(ae.getActionCommand().equals("Enter"))
             {
-                int temp = Integer.parseInt(t3.getText());
+                //int temp = Integer.parseInt(t3.getText());
                 if(t1.getText().equals("")|| t2.getText().equals("")||t3.getText().equals(""))
                 {
                     JOptionPane.showMessageDialog(frame,"Fill all Boxes");
                 }
-                else if(temp>2000)
+                else if(Integer.parseInt(t3.getText())>2000)
                 {
                     JOptionPane.showMessageDialog(frame,"Capacity more than 2000");
                     t3.setText("");

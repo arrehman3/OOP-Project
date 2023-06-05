@@ -105,9 +105,9 @@ public class maingui extends JFrame  {
                     else {
                         JOptionPane.showMessageDialog(frame,"INVALID CRESIDENTIALS");
                         JOptionPane.showMessageDialog(frame,"Enter Again");
-                        t1.setText(" ");
-                        t2.setText(" ");
-                        t3.setText(" ");
+                        t1.setText("");
+                        t2.setText("");
+                        t3.setText("");
                     }    
                     
                 }

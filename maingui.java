@@ -17,6 +17,7 @@ public class maingui extends JFrame  {
         setTitle("Hall Management System");
         setSize(800,600);
         setLayout(null);
+        setResizable(false);
         try{
             System.out.println("tried");
             image = new ImageIcon("C:/Users/Pc/Pictures/main frame.jpg");
@@ -92,7 +93,7 @@ public class maingui extends JFrame  {
                 }
 
                 else if (v.checkString(t1.getText()) && v.checkNumber(t2.getText()) && v.checkNumber(t3.getText())){
-                    if(t1.getText().equals("xyz") && t2.getText().equals("1122") && t3.getText().equals("03001234567"))
+                    if(t1.getText().equals("admin") && t2.getText().equals("1122") && t3.getText().equals("03001234567"))
                     {
                         String name = t1.getText() ;
                         int id = Integer.parseInt(t2.getText());

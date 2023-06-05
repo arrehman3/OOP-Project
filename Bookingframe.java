@@ -23,6 +23,7 @@ public class Bookingframe extends JFrame {
         this.CS=CS;
         
         setVisible(true);
+        setResizable(false);
         
         Booking B = new Booking(H,C,M);
         datesAndTimeSlots = B.getAvailableDates();

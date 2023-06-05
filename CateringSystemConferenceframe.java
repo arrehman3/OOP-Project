@@ -23,6 +23,7 @@ public class CateringSystemConferenceframe extends JFrame {
         setTitle("Hall Management System");
         setSize(800,700);
         setLayout(null);
+        setResizable(false);
         try{
             image = new ImageIcon("C:/Users/Pc/Pictures/cateringsystem1.1.jpeg"); 
         }catch(Exception e)

@@ -19,6 +19,7 @@ public class PaymentintermediateFrame extends JFrame {
         // setExtendedState(MAXIMIZED_BOTH);
         setSize(800, 600);
         setLayout(new GridLayout(2,2));
+        setResizable(false);
         
         b1 = new JButton("Card Payment");
         b2 = new JButton("Cash Payment");

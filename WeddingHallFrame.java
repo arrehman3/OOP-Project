@@ -18,6 +18,7 @@ public class WeddingHallFrame extends JFrame {
         setTitle("Hall Management System");
         setSize(800,600);
         setLayout(null);
+        setResizable(false);
         try{
             image = new ImageIcon("C:/Users/Pc/Pictures/wedding hall 1.0.jpeg");
         }

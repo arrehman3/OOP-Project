@@ -16,6 +16,7 @@ public class CardPaymentFrame extends JFrame {
         setSize(612,408);
         setTitle("Card Payment Frame");
         setLayout(null);
+        setResizable(false);
         try{
             System.out.println("tried");
             image = new ImageIcon("C:/Users/Pc/Pictures/cardpayment2.jpg");

@@ -10,7 +10,7 @@ public class Hallintermediateframe extends JFrame {
     private Customer C;
     public JFrame frame;
    
-    public JButton b1,b2;
+    private JButton b1,b2;
 
     Hallintermediateframe(Manager M,Customer C)
     {

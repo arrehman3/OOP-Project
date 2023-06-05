@@ -5,11 +5,11 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class maingui extends JFrame  {
-    public JTextField t1,t2,t3;
-    public JFrame frame;
-    public JLabel backgroundimage,l0,l1,l2,l3,L0;
-    public JButton b1,b2,b3;
-    public ImageIcon image;
+    private JTextField t1,t2,t3;
+    private JFrame frame;
+    private JLabel backgroundimage,l0,l1,l2,l3,L0;
+    private JButton b1,b2,b3;
+    private ImageIcon image;
        
 
     maingui()

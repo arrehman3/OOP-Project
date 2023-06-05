@@ -4,11 +4,11 @@ import java.awt.event.*;
 import java.awt.event.ActionListener.*;
 
 public class CardPaymentFrame extends JFrame {
-    public JFrame frame;
-    public JLabel backgroundimage,l1,l2,l3,l4,L0,l11;
-    public JButton b1,b2;
-    public JTextField t2,t3,t4;
-    public ImageIcon image;
+    private JFrame frame;
+    private JLabel backgroundimage,l1,l2,l3,l4,L0,l11;
+    private JButton b1,b2;
+    private JTextField t2,t3,t4;
+    private ImageIcon image;
 
     CardPaymentFrame()
     {

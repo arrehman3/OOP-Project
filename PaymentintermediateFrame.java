@@ -7,11 +7,11 @@ import java.awt.event.ActionListener;
 public class PaymentintermediateFrame extends JFrame {
 
     
-    public JFrame frame;
-    public JLabel l1,l2,l3,l4,L0;
-    public JButton b1,b2,b3;
-    public JPanel panel;
-    public JTextField t1,t2,t3;
+    private JFrame frame;
+    private JLabel l1,l2,l3,l4,L0;
+    private JButton b1,b2,b3;
+    private JPanel panel;
+    private JTextField t1,t2,t3;
 
     PaymentintermediateFrame()
     {

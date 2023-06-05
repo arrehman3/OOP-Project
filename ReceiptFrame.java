@@ -6,10 +6,10 @@ import java.awt.event.ActionListener;
 
 public class ReceiptFrame extends JFrame  {
     //public JTextField t1,t2,t3;
-    public JFrame frame;
-    public JLabel backgroundimage,l5,l6,l7,l8,l9,l10,l4,l1,l2,l3,l11,l12,l13,l14,l15,l16,l17,l18,l19,l20,L0;
-    public JButton b1;
-    public ImageIcon image; 
+    private JFrame frame;
+    private JLabel backgroundimage,l5,l6,l7,l8,l9,l10,l4,l1,l2,l3,l11,l12,l13,l14,l15,l16,l17,l18,l19,l20,L0;
+    private JButton b1;
+    private ImageIcon image; 
     private Customer C;
     private Manager M;
     private Hall H;

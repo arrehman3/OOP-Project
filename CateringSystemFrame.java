@@ -10,11 +10,11 @@ public class CateringSystemFrame extends JFrame {
     // private WeddingHall WH;
     // private ConferenceHall CH;
     
-    public JTextField t1,t2,t3,t4,t5,t6,t7,t8,t9,t10;
-    public JFrame frame;
-    public JLabel backgroundimage,l0,l1,l2,l3,L0,l4,l5,l6,l7,l8,l9,l10;
-    public JButton b1,b2,b3;   
-    public ImageIcon image;
+    private JTextField t1,t2,t3,t4,t5,t6,t7,t8,t9,t10;
+    private JFrame frame;
+    private JLabel backgroundimage,l0,l1,l2,l3,L0,l4,l5,l6,l7,l8,l9,l10;
+    private JButton b1,b2,b3;   
+    private ImageIcon image;
 
     CateringSystemFrame(Manager M,Customer C,Hall H)
     {

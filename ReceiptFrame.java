@@ -3,12 +3,17 @@ import java.awt.*;
 import java.awt.event.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.ObjectInputStream;
 
 public class ReceiptFrame extends JFrame  {
     //public JTextField t1,t2,t3;
     private JFrame frame;
     private JLabel backgroundimage,l5,l6,l7,l8,l9,l10,l4,l1,l2,l3,l11,l12,l13,l14,l15,l16,l17,l18,l19,l20,L0;
-    private JButton b1;
+    private JButton b1,b2;
     private ImageIcon image; 
     private Customer C;
     private Manager M;
@@ -25,7 +30,7 @@ public class ReceiptFrame extends JFrame  {
         this.CS = CS;
 
         Receipt R = new Receipt(H, M, C, CS, B);
-        //R.readFromFile();
+        R.readFromFile();
         R.writeToFile();
         setTitle("Receipt");
         setSize(800,800);
@@ -114,6 +119,9 @@ public class ReceiptFrame extends JFrame  {
 
         b1 = new JButton("Proceed");
         b1.setBounds(300,400,140,40);
+        b2 = new JButton("Details");
+        b2.setBounds(450,400,140,40);
+        b2.setOpaque(true);
         backgroundimage = new JLabel(image);
         backgroundimage.setBounds(0,-20,getWidth(),getHeight());
         // b2 = new JButton("Clear");
@@ -131,12 +139,13 @@ public class ReceiptFrame extends JFrame  {
         add(l17);add(l18);
         add(l19);add(l20);
         add(b1);
+        add(b2);
         add(backgroundimage);
-        // add(b2);
+        //add(b2);
         
         MyActionListener a = new MyActionListener();
         b1.addActionListener(a);
-        //b2.addActionListener(a);
+        b2.addActionListener(a);
         
         
         //setLayout(new BorderLayout());
@@ -185,6 +194,30 @@ public class ReceiptFrame extends JFrame  {
                 // }
                 dispose();
                 PaymentintermediateFrame PF = new PaymentintermediateFrame();
+            }
+            else if(ae.getActionCommand().equals("Details"))
+            {
+                try {
+                    File file = new File("filename.txt");
+                    if (file.exists()) {
+                        ObjectInputStream objectInputStream = new ObjectInputStream(new FileInputStream(file));
+                        Receipt receipt = (Receipt) objectInputStream.readObject();
+                        objectInputStream.close();
+                        String s = receipt.getCustomer().getName();
+                        JOptionPane.showMessageDialog(frame,s);
+                        //System.out.println("Receipt Data: " + receipt);
+                    } else {
+                        System.out.println("File does not exist.");
+                    }
+                } catch (ClassNotFoundException ex) {
+                    ex.printStackTrace();
+                } catch (FileNotFoundException ex) {
+                    ex.printStackTrace();
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                }
+
+                //JOptionPane.showMessageDialog(frame,s);
             }
             // else{
             //     t1.setText("");
